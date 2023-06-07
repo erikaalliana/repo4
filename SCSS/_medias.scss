@@ -1,0 +1,10 @@
+@media only screen and (max-widht: 500px) {
+	.column {
+		flex: 100%;
+	}
+}
+@media only screen and (min-widht: 501px) {
+	.column {
+		flex: 50%;
+	}
+}

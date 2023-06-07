@@ -1,0 +1,33 @@
+html {
+	font-size: 17px;
+}
+
+.align-items-center {
+	background-color: $background-color_2;
+}
+
+.img-fluid {
+	max-width: 30%;
+}
+h2 {
+	font-family: $font-family_4;
+	color: $color_2;
+	text-decoration: underline;
+	font-size: 25px;
+}
+
+img {
+	width: 100%;
+}
+
+h5 {
+	color: $color_1;
+	text-decoration: underline;
+	font-family: $font-family_2;
+}
+h4 {
+	color: $color_1;
+	font-family: $font-family_5;
+	text-decoration: underline;
+	text-align: center;
+}

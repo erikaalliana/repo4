@@ -1,0 +1,23 @@
+.jo {
+    @extend .tatu;
+}.img-joyas {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	text-align: center;
+	background-color: $background-color_1;
+}
+.oro {
+	@extend .img-joyas;
+}
+.zirconia {
+	@extend .img-joyas;
+}
+.Swarovski {
+	@extend .img-joyas;
+}
+.imgj {
+	width: 330px;
+	height: 300px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,18 @@
+.pfre {
+    @extend .tatu;
+}
+.materiales {
+	font-family: $font-family_4;
+	color: $color_2;
+	text-decoration: underline;
+}
+.img-pf {
+	width: 350px;
+	height: 350px;
+}
+.img-preguntas {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	text-align: center;
+	gap: 10px;
+}

@@ -1,0 +1,61 @@
+h1 {
+	font-family: $font-family_1;
+	color: $color_1;
+	display: flex;
+	background-color: $background-color_1;
+}
+.info {
+	color: $color_1;
+}
+p {
+	font-family: $font-family_2;
+	font-size: 22px;
+	color: $color_1;
+}
+body {
+	background-color: $background-color_1;
+}
+.dudas {
+	background-color: $background-color_3;
+}
+.ig {
+	font-family: $font-family_4;
+	font-size: 25px;
+	color: $color_3;
+	&:hover {
+		background-color: $background-color_1;
+		color: $color_1;
+		text-decoration: underline;
+	}
+}
+.fc {
+	font-family: $font-family_4;
+	font-size: 25px;
+	color: $color_3;
+	&:hover {
+		background-color: $background-color_2;
+		color: $color_1;
+		text-decoration: underline;
+	}
+}
+.subti {
+	background-color: $background-color_2;
+	display: flex;
+	justify-content: center;
+	font-family: $font-family_4;
+	font-size: 25px;
+}
+.creado {
+	font-family: $font-family_5;
+	justify-content: center;
+	color: $color_1;
+	display: flex;
+}
+.nav-link {
+	font-family: $font-family_6;
+	color: $color_2;
+	&:hover {
+		background-color: $background-color_2;
+		text-decoration: underline;
+	}
+}
