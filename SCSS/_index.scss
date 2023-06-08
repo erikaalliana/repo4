@@ -10,7 +10,7 @@ h1 {
 p {
 	font-family: $font-family_2;
 	font-size: 22px;
-	color: $color_1;
+	color:aqua;
 }
 body {
 	background-color: $background-color_1;
@@ -45,12 +45,6 @@ body {
 	font-family: $font-family_4;
 	font-size: 25px;
 }
-.creado {
-	font-family: $font-family_5;
-	justify-content: center;
-	color: $color_1;
-	display: flex;
-}
 .nav-link {
 	font-family: $font-family_6;
 	color: $color_2;
@@ -58,4 +52,7 @@ body {
 		background-color: $background-color_2;
 		text-decoration: underline;
 	}
+}
+.animate_animated_animate__zoomIn{
+	color: aqua;
 }
