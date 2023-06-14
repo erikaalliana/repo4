@@ -4,16 +4,27 @@ body {
   animation-iteration-count:initial;
   overflow-x:hidden;
   background-color: black !important;
-}
-h1 {
+}.enca-index {
   font-family: cinzel;
   background-color: rgb(5, 5, 5);
+  color: white !important;
+}
+h1{
+  font-family: vt323;
+  color: rgb(16, 247, 8) !important;
+  text-decoration: underline;
 }
 h2{
-  color: white;
-  font-family: 'Times New Roman', Times, serif;
+  color: white !important;
+  font-family:vt323;
   text-decoration: underline;
-  text-align: center;
+  font-size: 30px !important;
+}
+h3 {
+  font-family: vt323;
+  color: white !important;
+  text-decoration: underline;
+  font-size: 25px;
 }
 .info {
   color: white;
@@ -33,14 +44,6 @@ p {
 html {
   font-size: 17px;
 }
-#cuidados {
-  font-family: vt323;
-  font-size: x-large;
-  font-weight: bold;
-  color: rgb(16, 247, 8);
-  text-decoration: underline;
-}
-
 .nav-link {
   font-family: fantasy;
   color: rgb(16, 247, 8);
@@ -49,7 +52,6 @@ html {
   background-color: rgb(16, 247, 8);
   text-decoration: underline;
 }
-
 .subti {
   background-color: rgb(16, 247, 8);
   display: flex;
@@ -57,12 +59,11 @@ html {
   font-family: vt323;
   font-size: 25px;
   text-decoration: underline;
+  color: black !important;
 }
-
 .align-items-center {
   background-color: rgb(16, 247, 8);
 }
-
 .dudas {
   background-color: white;
   text-align: end;
@@ -89,13 +90,6 @@ html {
 .img-fluid {
   max-width: 30%;
 }
-h3 {
-  font-family: vt323;
-  color: rgb(16, 247, 8);
-  text-decoration: underline;
-  font-size: 25px;
-}
-
 .grid-layout, .grid-layout2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -107,21 +101,10 @@ h3 {
   margin: 0px;
   border: 1px solid white;
 }
-.tatu, .pier, .pfre, .insu, .servicios, .jo {
-  text-decoration: underline;
-  font-family: vt323;
-  color: rgb(16, 247, 8);
-}
-
 .img-insu{
   border-top: 5px solid black;
   width: 350px;
   height: 350px;
-}
-.materiales{
-  font-family: vt323;
-  color: rgb(16, 247, 8);
-  text-decoration: underline;
 }
 .img-preguntas{
   display: grid;
@@ -161,7 +144,8 @@ form{
   background-color:rgb(16, 247, 8);
   
 }
-h5{
-  font-family: monospace;
-  text-align: center;
+.cata{
+ text-align: center;
+ font-family: 'Times New Roman', Times, serif;
 }
+
