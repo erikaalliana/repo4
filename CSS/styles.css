@@ -3,29 +3,37 @@ body {
   animation-duration: 2s;
   animation-iteration-count:initial;
   overflow-x:hidden;
-  background-color: black !important;
+  background-color: black ;
 }.enca-index {
-  font-family: cinzel;
+  font-family: 'Cinzel Decorative', cursive;
   background-color: rgb(5, 5, 5);
-  color: white !important;
+  color: white ;
   text-decoration: none;
 }
 h1{
   font-family: vt323;
-  color: rgb(16, 247, 8) !important;
+  color: rgb(16, 247, 8);
   text-decoration: underline;
 }
 h2{
-  color: white !important;
-  font-family:vt323;
+  color: white ;
+  font-family: 'VT323', monospace;
   text-decoration: underline;
-  font-size: 30px !important;
+  font-size: 30px ;
 }
 h3 {
-  font-family: vt323;
-  color: white !important;
+  font-family: 'VT323', monospace;
+  color: white ;
   text-decoration: underline;
   font-size: 25px;
+}
+h4{
+  background-color: rgb(16, 247, 8);
+  font-size: 25px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  text-decoration: underline;
+  padding-bottom: 25px;
 }
 .info {
   color: white;
@@ -34,6 +42,7 @@ p {
   font-family: monospace;
   font-size: 22px;
   color: white;
+  margin:15px;
 }
 .dibujos {
   color: white;
@@ -57,10 +66,10 @@ html {
   background-color: rgb(16, 247, 8);
   display: flex;
   justify-content: center;
-  font-family: vt323;
+  font-family: 'VT323', monospace;
   font-size: 25px;
   text-decoration: underline;
-  color: black !important;
+  color: black;
 }
 .align-items-center {
   background-color: rgb(16, 247, 8);
@@ -69,25 +78,6 @@ html {
   background-color: white;
   text-align: end;
 }
-
-.fc, .ig{
-  font-family: vt323;
-  font-size: 25px;
-  color: black;
-  text-align: center;
-}
-
-.fc:hover {
-  background-color: black;
-  color: white;
-  text-decoration: underline;
-}
-.ig:hover {
-  background-color: black;
-  color: white;
-  text-decoration: underline;
-}
-
 .img-fluid {
   max-width: 30%;
 }
@@ -97,28 +87,28 @@ html {
   text-align: center;
   margin-bottom: 50px;
   margin-top: 20px;
+  object-fit: cover;
+
 }
 .imgd, .imgp, .imgt {
-  width: 300px;
-  height: 300px;
-  margin: 0px;
-  border: 1px solid white;
+  width: 100%;
+  height: 350px;
+  border: 5px solid black;
+  
 }
 .img-insu{
   border-top: 5px solid black;
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  height: 400px;
 }
 .img-preguntas{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   text-align: center;
-  gap: 10px;
+  width: 100%;
 }
-.img-pf{
-  width: 350px;
-  height: 350px;
-}
+
+
 .img-joyas, .oro, .zirconia, .Swarovski{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -151,4 +141,35 @@ form{
  text-align: center;
  font-family: 'Times New Roman', Times, serif;
 }
+.copy{
+  font-size: 20px;
+  text-align: center;
+}
+.ubicacion{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.fc, .ig{
+  font-family: vt323;
+  font-size: 25px;
+  color: black;
+  text-align: center;
+  margin-left: 50px;
+}
+.fc:hover {
+  background-color: black;
+  color: white;
+  text-decoration: underline;
+}
+.ig:hover {
+  background-color: black;
+  color: white;
+  text-decoration: underline;
+}
+.formulario{
+  padding-bottom: 40px;
+  padding-top: 50px;
+}
+
+
 
