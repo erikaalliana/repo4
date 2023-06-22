@@ -1,33 +1,55 @@
-html {
-	font-size: 17px;
+body {
+	animation-name: aparecer;
+	animation-duration: 2s;
+	animation-iteration-count: initial;
+	overflow-x: hidden;
+	background-color: $background-color_1;
 }
-
-.align-items-center {
-	background-color: $background-color_2;
-}
-
-.img-fluid {
-	max-width: 30%;
+h1 {
+	font-family: $font-family_2;
+	color: $color_2;
+	text-decoration: underline;
 }
 h2 {
-	font-family: $font-family_4;
-	color: $color_2;
+	color: $color_1;
+	font-family: $font-family_2;
+	text-decoration: underline;
+	font-size: 30px;
+}
+h3 {
+	font-family: $font-family_2;
+	color: $color_1;
 	text-decoration: underline;
 	font-size: 25px;
 }
-
-img {
-	width: 100%;
-}
-
-h5 {
-	color: $color_1;
-	text-decoration: underline;
-	font-family: $font-family_2;
-}
 h4 {
-	color: $color_1;
-	font-family: $font-family_5;
-	text-decoration: underline;
+	background-color: $background-color_3;
+	font-size: 25px;
+	font-family: $font-family_3;
 	text-align: center;
+	text-decoration: underline;
+	padding-bottom: 25px;
+}
+p {
+	font-family: $font-family_4;
+	font-size: 22px;
+	color: $color_1;
+	margin: 15px;
+}
+html {
+	font-size: 17px;
+}
+.nav-link {
+	font-family: $font-family_6;
+	color: $color_2;
+	&:hover {
+		background-color: $background-color_3;
+		text-decoration: underline;
+	}
+}
+.align-items-center {
+	background-color: $background-color_3;
+}
+.img-fluid {
+	max-width: 30%;
 }

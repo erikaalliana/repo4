@@ -1,17 +1,4 @@
-.tatu {
-	text-decoration: underline;
-	font-family: $font-family_4;
-	color: $color_2;
+.ejemplos {
+	color: $color_1;
+	font-family: $font-family_5;
 }
-.pier {
-    @extend .tatu;
-}
-#cuidados {
-	font-family: $font-family_4;
-	font-size: x-large;
-	font-weight: bold;
-	color: $color_2;
-	text-decoration: underline;
-}
-.servicios {
-    @extend .tatu;}

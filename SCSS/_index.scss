@@ -1,58 +1,55 @@
-h1 {
+.enca-index {
 	font-family: $font-family_1;
+	background-color: $background-color_2;
 	color: $color_1;
-	display: flex;
-	background-color: $background-color_1;
+	text-decoration: none;
+	margin: 5px;
 }
-.info {
-	color: $color_1;
-}
-p {
-	font-family: $font-family_2;
-	font-size: 22px;
-	color:aqua;
-}
-body {
-	background-color: $background-color_1;
-}
-.dudas {
+.subti {
 	background-color: $background-color_3;
+	display: flex;
+	justify-content: center;
+	font-family: $font-family_2;
+	font-size: 25px;
+	text-decoration: underline;
+	color: $color_3;
 }
-.ig {
-	font-family: $font-family_4;
+.imgcarru {
+	width: 100%;
+}
+.ubicacion {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.fc {
+	font-family: $font-family_8;
 	font-size: 25px;
 	color: $color_3;
+	text-align: center;
+	margin-left: 50px;
 	&:hover {
 		background-color: $background-color_1;
 		color: $color_1;
 		text-decoration: underline;
 	}
 }
-.fc {
-	font-family: $font-family_4;
+.ig {
+	font-family: $font-family_8;
 	font-size: 25px;
 	color: $color_3;
+	text-align: center;
+	margin-left: 50px;
 	&:hover {
-		background-color: $background-color_2;
+		background-color: $background-color_1;
 		color: $color_1;
 		text-decoration: underline;
 	}
 }
-.subti {
-	background-color: $background-color_2;
-	display: flex;
-	justify-content: center;
-	font-family: $font-family_4;
-	font-size: 25px;
+.formulario {
+	padding-bottom: 40px;
+	padding-top: 50px;
 }
-.nav-link {
-	font-family: $font-family_6;
-	color: $color_2;
-	&:hover {
-		background-color: $background-color_2;
-		text-decoration: underline;
-	}
-}
-.animate_animated_animate__zoomIn{
-	color: aqua;
+.copy {
+	font-size: 20px;
+	text-align: center;
 }

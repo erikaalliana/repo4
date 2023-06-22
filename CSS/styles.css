@@ -12,7 +12,7 @@ body {
   margin: 5px;
 }
 h1{
-  font-family: vt323;
+  font-family:'VT323', monospace;
   color: rgb(16, 247, 8);
   text-decoration: underline;
 }
@@ -36,17 +36,11 @@ h4{
   text-decoration: underline;
   padding-bottom: 25px;
 }
-.info {
-  color: white;
-}
 p {
   font-family: monospace;
   font-size: 22px;
   color: white;
   margin:15px;
-}
-.dibujos {
-  color: white;
 }
 .ejemplos {
   color: white;
@@ -75,10 +69,6 @@ html {
 .align-items-center {
   background-color: rgb(16, 247, 8);
 }
-.dudas {
-  background-color: white;
-  text-align: end;
-}
 .img-fluid {
   max-width: 30%;
 }
@@ -100,13 +90,6 @@ html {
   width: 100%;
   height: 400px;
 }
-.img-preguntas{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  text-align: center;
-  width: 100%;
-}
-
 
 .img-joyas, .oro, .zirconia, .Swarovski{
   display: grid;
@@ -131,10 +114,6 @@ html {
 }
 .imgcarru{
 width: 100%;
-}
-form{
-  background-color:rgb(16, 247, 8);
-  
 }
 .cata{
  text-align: center;
@@ -168,7 +147,5 @@ form{
 .formulario{
   padding-bottom: 40px;
   padding-top: 50px;
+  background-color: rgb(16, 247, 8);
 }
-
-
-
