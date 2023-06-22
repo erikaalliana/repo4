@@ -72,25 +72,24 @@ html {
 .img-fluid {
   max-width: 30%;
 }
-.grid-layout, .grid-layout2 {
+.grid-layout{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   margin-bottom: 50px;
   margin-top: 20px;
 }
-.imgd, .imgp, .imgt {
+.imgp, .imgt, .imgd {
   width: 100%;
   height: 300px;
   border: 5px solid black;
- object-fit: cover;
+ object-fit:cover;
   
 }
 .img-insu{
   border-top: 5px solid black;
   width: 100%;
-  height: 400px;
+  height: 300px;
 }
-
 .img-joyas, .oro, .zirconia, .Swarovski{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -104,7 +103,10 @@ html {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
+.animate__animated_animate__backInLeft{
+  width: 100%px;
+  height: 200px;
+}
 @keyframes aparecer {
   0% { opacity: 0;
   }
