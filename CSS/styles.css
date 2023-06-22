@@ -85,16 +85,14 @@ html {
 .grid-layout, .grid-layout2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  text-align: center;
   margin-bottom: 50px;
   margin-top: 20px;
-  object-fit: cover;
-
 }
 .imgd, .imgp, .imgt {
   width: 100%;
-  height: 350px;
+  height: 300px;
   border: 5px solid black;
+ object-fit: cover;
   
 }
 .img-insu{
