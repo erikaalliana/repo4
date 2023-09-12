@@ -1,37 +1,43 @@
-let mostrador = document.getElementById("mostrador");
-let seleccion = document.getElementById("seleccion");
-let imgSeleccionada = document.getElementById("img");
-let modeloSeleccionado = document.getElementById("modelo");
-let descripSeleccionada = document.getElementById("descripcion");
-let precioSeleccionado = document.getElementById("precio");
+const mostrador = document.getElementById("mostrador")
 
 const productos = [{
         nombre: "agujas",
-        precio: 1300
+        id:1,
+        precio: 1300,
+        img: "https://www.google.com/search?q=agujas+tattoo&rlz=1C1GCEU_esAR997AR997&oq=&gs_lcrp=EgZjaHJvbWUqCQgFECMYJxjqAjIJCAAQIxgnGOoCMg8IARAuGCcYxwEY6gIY0QMyCQgCEC4YJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyCQgFECMYJxjqAjIJCAYQLhgnGOoCMgkIBxAjGCcY6gLSAQkyMDc5ajBqMTWoAgiwAgE&sourceid=chrome&ie=UTF-8#imgrc=j4wRWShRl-cgYM&imgdii=u8ZZMWV2MWi36M",
+
     },
     {
+        id:2,
         nombre: "crema",
-        precio: 8800
+        precio: 8800,
+        img: ""
     },
     {
+        id:3,
         nombre: "cintas",
-        precio: 3600
+        precio: 3600,
+
     },
     {
+        id:4,
         nombre: "espuma",
-        precio: 7500
+        precio: 7500,
     },
     {
+        id:5,
         nombre: "punteras",
-        precio: 1100
+        precio: 1100,
     },
     {
+        id:6,
         nombre: "kit",
-        precio: 20500
+        precio: 20500,
     },
     {
+        id:7,
         nombre: "papel ectográfico",
-        precio: 1100
+        precio: 1100,
     },
 ]
 let carrito = []
@@ -102,6 +108,22 @@ while (seleccion != "no") {
 }
 const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0)
 console.log(`El total a pagar por su compra es de: ${total}`)
+
+productos.forEach((product) => {
+    let content = document.createElement("div");
+    content.className = "card";
+    content.innerHTML = `
+    <img src="${product.img}">
+    <h3>${product.nombre}</h3>
+    <p class= "price" >${product.precio} $</p>
+    `;
+    mostrador.append(content);
+
+    let comprar = document.createElement("button")
+    comprar.innerText = "Comprar";
+    comprar.className = "Comprar"
+    content.append(Comprar)
+});
 
 
 function cargar(item) {
