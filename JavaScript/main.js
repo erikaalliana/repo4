@@ -1,159 +1,108 @@
-const mostrador = document.getElementById("mostrador")
+const shopContent= document.getElementById("shopContent")
+const verCarrito= document.getElementById("verCarrito");
+const modalContainer = document.getElementById("modal-container");
 
 const productos = [{
-        nombre: "agujas",
+        nombre: "Agujas",
         id:1,
         precio: 1300,
-        img: "https://www.google.com/search?q=agujas+tattoo&rlz=1C1GCEU_esAR997AR997&oq=&gs_lcrp=EgZjaHJvbWUqCQgFECMYJxjqAjIJCAAQIxgnGOoCMg8IARAuGCcYxwEY6gIY0QMyCQgCEC4YJxjqAjIJCAMQIxgnGOoCMgkIBBAjGCcY6gIyCQgFECMYJxjqAjIJCAYQLhgnGOoCMgkIBxAjGCcY6gLSAQkyMDc5ajBqMTWoAgiwAgE&sourceid=chrome&ie=UTF-8#imgrc=j4wRWShRl-cgYM&imgdii=u8ZZMWV2MWi36M",
+        img: "https://http2.mlstatic.com/D_NQ_NP_995476-MLA51519592549_092022-O.webp"
 
     },
     {
         id:2,
-        nombre: "crema",
+        nombre: "Crema",
         precio: 8800,
-        img: ""
+        img: "https://selmadigital.com/wp-content/uploads/2021/12/Deskin_Hidratante02_1000x1000.png"  
     },
     {
         id:3,
-        nombre: "cintas",
+        nombre: "Cintas",
         precio: 3600,
+        img: "https://http2.mlstatic.com/D_NQ_NP_863860-MCO31561700413_072019-O.webp"
 
     },
     {
         id:4,
-        nombre: "espuma",
+        nombre: "Espuma",
         precio: 7500,
+        img: "https://farmacityar.vtexassets.com/arquivos/ids/217230/222292_espuma-deskin-post-tatuaje-x-60-g_imagen-1.jpg?v=637720705442930000"
     },
     {
         id:5,
-        nombre: "punteras",
+        nombre: "Punteras",
         precio: 1100,
+        img: "https://m.media-amazon.com/images/I/61vaFbtttQL.jpg"
     },
+  
     {
         id:6,
-        nombre: "kit",
-        precio: 20500,
-    },
-    {
-        id:7,
-        nombre: "papel ectográfico",
+        nombre: "Papel Hectográfico",
         precio: 1100,
+        img: "https://http2.mlstatic.com/D_NQ_NP_682823-MLA70708570418_072023-O.webp"
     },
 ]
+
 let carrito = []
 
-
-while (seleccion != "si" && seleccion != "no") {
-    alert("Hola Ingrese SI si desea comprar, o ingrese NO si no quiere")
-    seleccion = prompt("¿Desea comprar? SI o NO")
-}
-if (seleccion == "si") {
-    alert("a continuación nuestra lista de productos")
-    let todoslosProductos = productos.map(
-        (producto) => producto.nombre + " " + producto.precio + "$"
-    );
-    alert(todoslosProductos.join(" - "))
-} else if (seleccion == "no") {
-    alert("Gracias por venir vuelva pronto!")
-}
-while (seleccion != "no") {
-    let producto = prompt("agrega un producto a tu carrito")
-    let precio = 0
-
-    if (producto == "agujas" || producto == "crema" || producto == "cintas" || producto == "espuma" ||
-        producto == "punteras" || producto == "kit" || producto == "papel ectografico") {
-        switch (producto) {
-            case "agujas":
-                precio = 1300;
-                break;
-            case "crema":
-                precio = 8800;
-                break;
-            case "cintas":
-                precio = 3600;
-                break;
-            case "espuma":
-                precio = 7500;
-                break;
-            case "punteras":
-                precio = 1100;
-                break;
-            case "kit":
-                precio = 20500;
-                break;
-            case "papel ectografico":
-                precio = 2800;
-                break;
-        }
-        let unidades = parseInt(prompt("Cuantas unidades quiere llevar?"))
-        carrito.push({
-            producto,
-            unidades,
-            precio,
-        })
-        console.log(carrito)
-    } else {
-        alert("No tenemos ese producto! :(")
-    }
-    seleccion = prompt("Quiere seguir comprando?")
-
-    while (seleccion == "no") {
-        alert("Gracias por confiar en nosotros")
-        carrito.forEach((carritoFinal) => {
-            console.log(`producto: ${carritoFinal.producto}, unidades: ${carritoFinal.unidades},
-                total a pagar por producto ${carritoFinal.unidades * carritoFinal.precio} `)
-        })
-        break;
-    }
-}
-const total = carrito.reduce((acc, el) => acc + el.precio * el.unidades, 0)
-console.log(`El total a pagar por su compra es de: ${total}`)
-
-productos.forEach((product) => {
+//los productos
+productos.forEach((product)=>{
     let content = document.createElement("div");
     content.className = "card";
     content.innerHTML = `
+    <img src= "${product.img}">
+    <h3>${product.nombre}</h3>
+    <p class="price">${product.precio} $</p>
+    `;
+shopContent.append(content)
+
+//boton de comprar 
+let Comprar = document.createElement("button")
+Comprar.innerText = "Comprar";
+Comprar.className = "Comprar"
+content.append(Comprar);
+
+Comprar.addEventListener("click", ()=>{
+    carrito.push({
+        id: product.id,
+        img: product.img,
+        nombre: product.nombre,
+        precio: product.precio,
+    });
+    console.log(carrito);
+});
+}); 
+
+//Carrito
+verCarrito.addEventListener("click", () =>{
+    const modalHeader = document.createElement("div");
+    modalHeader.className = "modal-header"
+    modalHeader.innerHTML = `
+    <h1 class="modal-header-title">Carrito.</h1>
+    `;
+    modalContainer.append(modalHeader);
+    const modalbutton = document.createElement("h1");
+    modalbutton.className= "modal-header-button";
+
+    modalHeader.append(modalbutton);
+
+    carrito.forEach((product)=> {
+        let carritoContent= document.createElement("div")
+    carritoContent.className="modal-content"
+    carritoContent.innerHTML= `
     <img src="${product.img}">
     <h3>${product.nombre}</h3>
-    <p class= "price" >${product.precio} $</p>
+    <p>${product.precio} $</p>
     `;
-    mostrador.append(content);
+    modalContainer.append(carritoContent)
+    });
+    const total=carrito.reduce((acc, el)=> acc + el.precio, 0);
 
-    let comprar = document.createElement("button")
-    comprar.innerText = "Comprar";
-    comprar.className = "Comprar"
-    content.append(Comprar)
+const totalBuying= document.createElement("div");
+totalBuying.className= "total-content";
+totalBuying.innerHTML=`El total a pagar es: ${total}$`;
+modalContainer.append(totalBuying);
 });
 
 
-function cargar(item) {
-    quitarBordes();
-    mostrador.style.width = "60%";
-    seleccion.style.width = "40%";
-    seleccion.style.opacity = "1";
-    item.style.border = "2px solid red";
 
-    imgSeleccionada.src = item.getElementsByTagName("img")[0].src;
-
-    modeloSeleccionado.innerHTML = item.getElementsByTagName("p")[0].innerHTML;
-
-    descripSeleccionada.innerHTML = "Descripción del modelo ";
-
-    precioSeleccionado.innerHTML = item.getElementsByTagName("span")[0].innerHTML;
-
-
-}
-
-function cerrar() {
-    mostrador.style.width = "100%";
-    seleccion.style.width = "0%";
-    seleccion.style.opacity = "0";
-    quitarBordes();
-}
-
-function quitarBordes() {
-    var items = document.getElementsByClassName("item");
-    for (i = 0; i < items.length; i++) {
-        items[i].style.border = "none";
-    }
-}
