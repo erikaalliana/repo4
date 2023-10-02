@@ -250,3 +250,20 @@ scrollbar-color: none;
   color: white;
   font-family: vt323;
 }
+/*delete button*/
+.delete-product{
+  cursor: pointer;
+}
+/*LA CANTIDAD CARRITO*/
+.cantidadCarrito{
+  background-color: rgb(16, 247, 8);
+  color: white;
+  border-radius: 100%;
+  padding: 6px;
+  top: 10px;
+  right: 14px;
+  position: absolute;
+  display: none;
+  font-family: vt323;
+  font-size: 20px;
+}

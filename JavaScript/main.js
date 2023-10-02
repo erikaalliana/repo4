@@ -1,52 +1,57 @@
-const shopContent= document.getElementById("shopContent")
-const verCarrito= document.getElementById("verCarrito");
+const shopContent = document.getElementById("shopContent")
+const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
 
 const productos = [{
         nombre: "Agujas",
-        id:1,
+        id: 1,
         precio: 1300,
-        img: "https://http2.mlstatic.com/D_NQ_NP_995476-MLA51519592549_092022-O.webp"
-
+        cantidad: 1,
+        img: "https://http2.mlstatic.com/D_NQ_NP_995476-MLA51519592549_092022-O.webp",
     },
     {
-        id:2,
         nombre: "Crema",
+        id: 2,
         precio: 8800,
-        img: "https://selmadigital.com/wp-content/uploads/2021/12/Deskin_Hidratante02_1000x1000.png"  
+        cantidad: 1,
+        img: "https://selmadigital.com/wp-content/uploads/2021/12/Deskin_Hidratante02_1000x1000.png",
     },
     {
-        id:3,
         nombre: "Cintas",
+        id: 3,
         precio: 3600,
-        img: "https://http2.mlstatic.com/D_NQ_NP_863860-MCO31561700413_072019-O.webp"
-
+        cantidad: 1,
+        img: "https://http2.mlstatic.com/D_NQ_NP_863860-MCO31561700413_072019-O.webp",
     },
     {
-        id:4,
         nombre: "Espuma",
+        id: 4,
         precio: 7500,
-        img: "https://farmacityar.vtexassets.com/arquivos/ids/217230/222292_espuma-deskin-post-tatuaje-x-60-g_imagen-1.jpg?v=637720705442930000"
+        cantidad: 1,
+        img: "https://farmacityar.vtexassets.com/arquivos/ids/217230/222292_espuma-deskin-post-tatuaje-x-60-g_imagen-1.jpg?v=637720705442930000",
     },
     {
-        id:5,
         nombre: "Punteras",
+        id: 5,
         precio: 1100,
-        img: "https://m.media-amazon.com/images/I/61vaFbtttQL.jpg"
+        cantidad: 1,
+        img: "https://m.media-amazon.com/images/I/61vaFbtttQL.jpg",
     },
-  
+
     {
-        id:6,
         nombre: "Papel Hectográfico",
+        id: 6,
         precio: 1100,
-        img: "https://http2.mlstatic.com/D_NQ_NP_682823-MLA70708570418_072023-O.webp"
+        img: "https://http2.mlstatic.com/D_NQ_NP_682823-MLA70708570418_072023-O.webp",
+        cantidad: 1,
     },
 ]
 
 let carrito = []
 
-//los productos
-productos.forEach((product)=>{
+//LOS PRODUCTOS//
+productos.forEach((product) => {
     let content = document.createElement("div");
     content.className = "card";
     content.innerHTML = `
@@ -54,27 +59,40 @@ productos.forEach((product)=>{
     <h3>${product.nombre}</h3>
     <p class="price">${product.precio} $</p>
     `;
-shopContent.append(content)
+    shopContent.append(content)
 
-//boton de comprar 
-let Comprar = document.createElement("button")
-Comprar.innerText = "Comprar";
-Comprar.className = "Comprar"
-content.append(Comprar);
+    //BOTÓN DE COMPRAR//
+    let comprar = document.createElement("button")
+    comprar.innerText = "comprar";
+    comprar.className = "comprar"
+    content.append(comprar);
 
-Comprar.addEventListener("click", ()=>{
-    carrito.push({
-        id: product.id,
-        img: product.img,
-        nombre: product.nombre,
-        precio: product.precio,
+    comprar.addEventListener("click", () => {
+        const repeat = carrito.some((repeatProduct) => repeatProduct.id == product.id);
+        if (repeat){
+            carrito.map((prod) =>{
+                if(prod.id== product.id){
+                    prod.cantidad++;
+                }
+            });
+        }else{
+            carrito.push({
+                id: product.id,
+                img: product.img,
+                nombre: product.nombre,
+                precio: product.precio,
+                cantidad: product.cantidad,
+            });
+        }
+        console.log(carrito);
+        carritoCounter();
     });
-    console.log(carrito);
 });
-}); 
 
-//Carrito
-verCarrito.addEventListener("click", () =>{
+//CARRITO//
+const pintarCarrito = () => {
+    modalContainer.innerHTML = "";
+    modalContainer.style.display = "flex";
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header"
     modalHeader.innerHTML = `
@@ -82,27 +100,54 @@ verCarrito.addEventListener("click", () =>{
     `;
     modalContainer.append(modalHeader);
     const modalbutton = document.createElement("h1");
-    modalbutton.className= "modal-header-button";
+    modalbutton.innerText = "X";
+    modalbutton.className = "modal-header-button";
+
+    modalbutton.addEventListener("click", () => {
+        modalContainer.style.display = "none";
+    })
 
     modalHeader.append(modalbutton);
 
-    carrito.forEach((product)=> {
-        let carritoContent= document.createElement("div")
-    carritoContent.className="modal-content"
-    carritoContent.innerHTML= `
+    carrito.forEach((product) => {
+        let carritoContent = document.createElement("div")
+        carritoContent.className = "modal-content"
+        carritoContent.innerHTML = `
     <img src="${product.img}">
     <h3>${product.nombre}</h3>
     <p>${product.precio} $</p>
+    <P>Cantidad: ${product.cantidad}</p>
+    <p>Total: ${product.cantidad * product.precio}</p>
     `;
-    modalContainer.append(carritoContent)
+        modalContainer.append(carritoContent);
+
+        console.log(carrito.length);
+
+        let eliminar = document.createElement("span");
+        eliminar.innerText = "❌";
+        eliminar.className = "delete-product";
+        carritoContent.append(eliminar);
+
+        eliminar.addEventListener("click", eliminarProducto)
     });
-    const total=carrito.reduce((acc, el)=> acc + el.precio, 0);
+    const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
 
-const totalBuying= document.createElement("div");
-totalBuying.className= "total-content";
-totalBuying.innerHTML=`El total a pagar es: ${total}$`;
-modalContainer.append(totalBuying);
-});
+    const totalBuying = document.createElement("div");
+    totalBuying.className = "total-content";
+    totalBuying.innerHTML = `El total a pagar es: ${total}$`;
+    modalContainer.append(totalBuying);
+};
+verCarrito.addEventListener("click", pintarCarrito);
 
-
-
+const eliminarProducto = () => {
+    const foundId = carrito.find((element) => element.id);
+    carrito = carrito.filter((carritoId) => {
+        return carritoId !== foundId;
+    });
+    carritoCounter();
+    pintarCarrito();
+};
+const carritoCounter = () => {
+    cantidadCarrito.style.display="block";
+    cantidadCarrito.innerText = carrito.length;
+}  
