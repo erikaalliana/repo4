@@ -1,0 +1,44 @@
+[
+    {
+      "nombre": "Agujas",
+      "id": 1,
+      "precio": 1300,
+      "cantidad": 1,
+      "img": "https://http2.mlstatic.com/D_NQ_NP_995476-MLA51519592549_092022-O.webp"
+    },
+    {
+      "nombre": "Crema",
+      "id": 2,
+      "precio": 8800,
+      "cantidad": 1,
+      "img": "https://elbloquear.vtexassets.com/arquivos/ids/155582-800-auto?v=637868537543930000&width=800&height=auto&aspect=true"
+    },
+    {
+      "nombre": "Cintas",
+      "id": 3,
+      "precio": 3600,
+      "cantidad": 1,
+      "img": "https://http2.mlstatic.com/D_NQ_NP_863860-MCO31561700413_072019-O.webp"
+    },
+    {
+      "nombre": "Espuma",
+      "id": 4,
+      "precio": 7500,
+      "cantidad": 1,
+      "img": "https://farmacityar.vtexassets.com/arquivos/ids/217230/222292_espuma-deskin-post-tatuaje-x-60-g_imagen-1.jpg?v=637720705442930000"
+    },
+    {
+      "nombre": "Punteras",
+      "id": 5,
+      "precio": 1100,
+      "cantidad": 1,
+      "img": "https://m.media-amazon.com/images/I/61vaFbtttQL.jpg"
+    },
+    {
+      "nombre": "Papel Hectográfico",
+      "id": 6,
+      "precio": 1100,
+      "img": "https://http2.mlstatic.com/D_NQ_NP_682823-MLA70708570418_072023-O.webp",
+      "cantidad": 1
+    }
+  ]
